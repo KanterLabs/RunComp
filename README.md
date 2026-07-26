@@ -37,6 +37,12 @@ pnpm test
 pnpm build
 ```
 
+GitHub validation uses the `homelab` micro tier. ARC manages when the
+ephemeral runner pod exists; the runner performs typechecking, unit tests, and
+the production build, then is deleted. Keep the job micro unless profiling
+shows sustained CPU demand that justifies `homelab-heavy`. See the
+[canonical KanterLabs runner runbook](https://github.com/KanterLabs/infrastructure/tree/main/homelab/ci-runners).
+
 ## Hostlet Notes
 
 Use these settings when creating the Hostlet app:
